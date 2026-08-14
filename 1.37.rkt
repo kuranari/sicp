@@ -24,7 +24,7 @@
 ;; b. 上で書いた cont-frac が再帰的プロセスを生成するなら反復的プロセスを生成するものを、
 ;;    反復的なら再帰的なものを書け。
 
-;; TODO: a. cont-frac を実装し、1/φ を近似する。4 桁の精度に必要な k を調べる
+;; a. cont-frac を実装し、1/φ を近似する。4 桁の精度に必要な k を調べる
 
 (define (cont-frac n d k)
   (define (cont-frac-i n d i)
@@ -40,7 +40,7 @@
   (display (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) k))
   (newline))
 
-;; TODO: b. もう一方のプロセス (反復的 / 再帰的) を生成する版を実装する
+;; b. もう一方のプロセス (反復的 / 再帰的) を生成する版を実装する
 
 (define (cont-frac2 n d k)
   (define (cont-frac-iter n d i m)

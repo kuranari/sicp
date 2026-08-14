@@ -27,7 +27,7 @@
   (newline)
   (try first-guess))
 
-;; TODO: 近似値の列を印字するように fixed-point を修正する
+;; 近似値の列を印字するように fixed-point を修正する
 (define (sqrt x)
   (fixed-point (lambda (y) (average y (/ x y))) 1.0))
 (sqrt 2)
@@ -35,14 +35,14 @@
 (display "-----")
 (newline)
 
-;; TODO: 平均緩和法なしで x^x = 1000 の解を求める
+;; 平均緩和法なしで x^x = 1000 の解を求める
 ;; 10 から開始して 34 ステップ
 (fixed-point (lambda (x) (/ (log 1000) (log x))) 10)
 
 (display "-----")
 (newline)
 
-;; TODO: 平均緩和法ありで x^x = 1000 の解を求め、ステップ数を比較する
+;; 平均緩和法ありで x^x = 1000 の解を求め、ステップ数を比較する
 ;; 10 から開始して 11 ステップ
 (fixed-point (lambda (x) (average x (/ (log 1000) (log x)))) 10)
 
