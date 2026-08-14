@@ -1,4 +1,5 @@
 ;; 開始: 2026-08-14(Fri) 20:26:07
+;; 終了: 2026-08-14(Fri) 20:43:11
 
 #lang racket
 (require racket/trace)
@@ -29,3 +30,10 @@
   (fixed-point (newton-transform g) guess))
 
 ;; cubic を実装する
+(define (square x) (* x x))
+(define (cube x) (* x x x))
+(define (cubic a b c)
+  (lambda (y) (+ (cube y) (* a (square y)) (* b y) c)))
+
+(newtons-method (cubic 1 1 1) 1)
+(newtons-method (cubic 1 2 4) 1)
